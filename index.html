@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>心田花开幸存者组织</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-icon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            font-size: 24px;
+            z-index: 1000;
+            transition: all 0.3s ease; /* 添加过渡效果 */
+        }
+
+        .menu {
+            position: fixed;
+            top: 0;
+            right: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: #333;
+            color: white;
+            transition: right 0.3s ease;
+            z-index: 999;
+        }
+
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            padding-top: 60px;
+        }
+
+        .menu ul li {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .menu ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .menu ul li a:hover {
+            color: #ddd;
+        }
+
+        .menu.active {
+            right: 0;
+        }
+
+        /* 修正：按钮滑动到左上角 */
+        .menu-icon.active {
+            right: auto; /* 取消右侧定位 */
+            left: 20px; /* 定位到左上角 */
+            top: 20px; /* 保持顶部距离 */
+            font-size: 24px;
+            content: '←';
+        }
+
+        /* 新增：菜单内的箭头 */
+        .menu-arrow {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            display: none; /* 默认隐藏 */
+        }
+
+        .menu.active .menu-arrow {
+            display: block; /* 菜单激活时显示 */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 右上角三个点 -->
+    <div class="menu-icon" id="menuIcon" onclick="toggleMenu()">&#9776;</div>
+
+    <!-- 菜单栏 -->
+    <div class="menu" id="menu">
+        <!-- 菜单内的箭头 -->
+        <div class="menu-arrow" onclick="toggleMenu()">→</div>
+        <ul>
+            <li><a href="https://x-p-o.github.io">首页</a></li>
+            <li><a href="https://x-p-o.github.io/rule">Rule</a></li>
+        </ul>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            var menuIcon = document.getElementById("menuIcon");
+            menu.classList.toggle("active");
+            menuIcon.classList.toggle("active");
+
+            if (menu.classList.contains("active")) {
+                menuIcon.innerHTML = '&#9776;'; // 恢复为三个点
+            } else {
+                menuIcon.innerHTML = '&#9776;'; // 保持为三个点
+            }
+        }
+    </script>
+    <h1>最近，教室里出现烈焰红唇，已有</h1>
+    <p style="color: red;">3</p>
+    <h1>受难</h1>
+    
+</body>
+</html>
