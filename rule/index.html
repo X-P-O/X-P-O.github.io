@@ -59,16 +59,7 @@
             right: 0;
         }
 
-        /* 修正：按钮滑动到左上角 */
-        .menu-icon.active {
-            right: auto; /* 取消右侧定位 */
-            left: 20px; /* 定位到左上角 */
-            top: 20px; /* 保持顶部距离 */
-            font-size: 24px;
-            content: '←';
-        }
-
-        /* 新增：菜单内的箭头 */
+        /* 菜单栏内部的箭头 */
         .menu-arrow {
             position: absolute;
             top: 20px;
@@ -85,18 +76,16 @@
 </head>
 <body>
 
-    <!-- 右上角三个点 -->
+    <!-- 右上角三横 -->
     <div class="menu-icon" id="menuIcon" onclick="toggleMenu()">&#9776;</div>
 
     <!-- 菜单栏 -->
     <div class="menu" id="menu">
-        <!-- 菜单内的箭头 -->
+        <!-- 菜单栏内部的箭头 -->
         <div class="menu-arrow" onclick="toggleMenu()">→</div>
         <ul>
-            <li><a href="https://tykevin516.github.io/gl/">首页</a></li>
-            <li><a href="https://tykevin516.github.io/gl/1.html">第二页</a></li>
-            <li><a href="https://tykevin516.github.io/gl/2.html">第三页</a></li>
-            <li><a href="https://tykevin516.github.io/gl/4.html">第四页</a></li>
+            <li><a href="https://x-p-o.github.io">Home</a></li>
+            <li><a href="#">rule</a></li>
         </ul>
     </div>
 
@@ -108,9 +97,9 @@
             menuIcon.classList.toggle("active");
 
             if (menu.classList.contains("active")) {
-                menuIcon.innerHTML = '&#9776;'; // 恢复为三个点
+                menuIcon.innerHTML = 'O'; // 菜单打开时改为三竖
             } else {
-                menuIcon.innerHTML = '&#9776;'; // 保持为三个点
+                menuIcon.innerHTML = '&#9776;'; // 菜单关闭时恢复为三横
             }
         }
     </script>
